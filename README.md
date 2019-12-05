@@ -1,6 +1,6 @@
 # AdventOfCode2019
 
-This is where I'll be posting my solutions to the annaual Advent of Code. 
+My solutions to the [2019 Advent of Code](https://adventofcode.com/2019). All solutions are original, and are written in the Java programming language.
 
 Day | Part 1 | Part 2
 :------------ | :-------------| :-------------|
