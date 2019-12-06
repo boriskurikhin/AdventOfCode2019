@@ -26,11 +26,13 @@ public class Day5 {
 			
 			switch (opCode) {			
 				case 1:
-					input[input[i + 3]] = (aMode == 1 ? input[i + 1] : input[input[i + 1]]) + (bMode == 1 ? input[i + 2] : input[input[i + 2]]);
+					input[input[i + 3]] = (aMode == 1 ? input[i + 1] : input[input[i + 1]]) 
+						            + (bMode == 1 ? input[i + 2] : input[input[i + 2]]);
 					i += 4;
 					break;
 				case 2:
-					input[input[i + 3]] = (aMode == 1 ? input[i + 1] : input[input[i + 1]]) * (bMode == 1 ? input[i + 2] : input[input[i + 2]]);
+					input[input[i + 3]] = (aMode == 1 ? input[i + 1] : input[input[i + 1]]) 
+						            * (bMode == 1 ? input[i + 2] : input[input[i + 2]]);
 					i += 4;
 					break;
 				case 3: 
