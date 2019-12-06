@@ -8,3 +8,5 @@ Day | Part 1 | Part 2
 2 | :heavy_check_mark: |  :heavy_check_mark:
 3 | :heavy_check_mark: |  :heavy_check_mark:
 4 | :heavy_check_mark: |  :heavy_check_mark:
+5 | :hourglass: |  :hourglass:
+6 | :heavy_check_mark: |  :heavy_check_mark:
