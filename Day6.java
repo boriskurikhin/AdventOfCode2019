@@ -25,7 +25,7 @@ public class Day6 {
 	 * Either way, Day 6 is done. We got our 2 gold stars. On to the next.
 	 */
 	
-	public static long getIndirect (String key) {
+	public static long getCount (String key) {
 		/* We need to return direct + indirect */
 		if (!map.containsKey(key)) 
 			return 0;
@@ -33,7 +33,7 @@ public class Day6 {
 		long result = 0;
 		
 		for (String p : map.get(key))
-			result += 1 + getIndirect(p);
+			result += 1 + getCount(p);
 		
 		return result;
 	}
@@ -79,7 +79,7 @@ public class Day6 {
 		long total = 0;
 		
 		for (String start : map.keySet())
-			total += getIndirect (start);
+			total += getCount (start);
 		
 		//Part 1 stuff
 		System.out.println(total);
@@ -94,7 +94,6 @@ public class Day6 {
 		long answer = Integer.MAX_VALUE;
 		
 		for (String visitedPlanet : dist_santa.keySet()) {
-			System.out.println(visitedPlanet);
 			if (dist_you.containsKey(visitedPlanet)) {
 				answer = Math.min(dist_santa.get(visitedPlanet) + dist_you.get(visitedPlanet), answer);
 			}
