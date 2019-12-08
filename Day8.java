@@ -30,8 +30,7 @@ public class Day8 extends Component {
 	
 	public static int[] part2(String line, int w, int h) {
 		int len = line.length();
-		int layerSize = w * h;
-		int[] answer = new int[layerSize];
+		int[] answer = new int[w * h];
 		for (int i = 0; i < h; i++)
 			for (int j = 0; j < w; j++) 
 				answer[i * w + j] = dig(line, w * h, len / (w * h), 1, i * w + j);
