@@ -14,3 +14,9 @@ Link | Part 1 | Part 2 | Tactic (w/ link to my solution)
 [Day 6](https://adventofcode.com/2019/day/6) | :heavy_check_mark: |  :heavy_check_mark: | [Recursion](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day6.java)
 [Day 7](https://adventofcode.com/2019/day/7) | :heavy_check_mark: |  Working on it... | [Ad Hoc / Recursion](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day7.java)
 [Day 8](https://adventofcode.com/2019/day/8) | :heavy_check_mark: |  :heavy_check_mark: | [Image Processing-ish](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day8.java)
+
+## Extras
+
+Here is what my Day 8 solution visually looks like. We can derive string "ZUKCJ" from the generated image.
+
+![My Java solution to day 8](day8.png)
