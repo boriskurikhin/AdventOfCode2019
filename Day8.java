@@ -60,12 +60,12 @@ public class Day8 extends Component {
 		
 		JFrame frame = new JFrame("Output");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
-        frame.getContentPane().add(new Day8());
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setSize(new Dimension(width * SCALE, height * SCALE));
-        frame.setVisible(true);
+		frame.setLayout(new BorderLayout());
+		frame.getContentPane().add(new Day8());
+		frame.pack();
+		frame.setLocationRelativeTo(null);
+		frame.setSize(new Dimension(width * SCALE, height * SCALE));
+		frame.setVisible(true);
 	}
 	
 	public void paint (Graphics g) {
