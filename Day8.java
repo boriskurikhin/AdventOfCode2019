@@ -67,6 +67,12 @@ public class Day8 extends Component {
 		frame.setVisible(true);
 	}
 	
+	/* 
+		Drawing the image pixel by pixel works, however the resulting image ends up being puny.
+		I used an idea I picked up from a Notch livestream a while ago. For graphics, he uses a variable called
+		SCALE. Essentially, you make each pixel appear to be 32x32 by multiplying each pixel measurement by SCALE.
+	*/
+	
 	public void paint (Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		for (int i = 0; i < height; i++) {
