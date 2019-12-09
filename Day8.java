@@ -63,7 +63,7 @@ public class Day8 extends Component {
 		frame.getContentPane().add(new Day8());
 		frame.pack();
 		frame.setLocationRelativeTo(null);
-		frame.setSize(new Dimension(width * SCALE, height * SCALE));
+       		frame.setSize(new Dimension(width * SCALE , height * SCALE + SCALE/2));
 		frame.setVisible(true);
 	}
 	
