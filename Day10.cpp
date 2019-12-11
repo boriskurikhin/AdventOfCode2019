@@ -17,65 +17,40 @@ vector< pair<pair<int, int>, double > > locations;
 //soh cah toa
 //tan (theta) = o / a
 //I hate trig
+//This function finds the angle in degrees to an asteroid facing upwards
 double theta(pair<int, int> station, pair<int, int> asteroid) {
-
-    //cout << "STATION (" << station.first << ", " << station.second << ") -> ASTEROID (" << asteroid.first << ", " << asteroid.second << ") = ";
-
     int opposite = abs(asteroid.first - station.first);
     int adjacent = abs(asteroid.second - station.second);
-
     double theta = atan((double) opposite / (double) adjacent) * 180.0 / 3.1415; //raw inside angle
-
     //aligned vertically
     if (asteroid.second == station.second) {
-        if (asteroid.first < station.first) {
-            theta = 0.0; //directly above
-        } else {
-            theta = 180.0;
-        }
+        if (asteroid.first < station.first) theta = 0.0; //directly above
+        else theta = 180.0;
     } else if (asteroid.first == station.first) {
-        //aligned horizontally
-        if (asteroid.second < station.second) {
-            theta = 270.0; //directly on the left
-        } else {
-            theta = 90.0;
-        }
+        if (asteroid.second < station.second) theta = 270.0; //directly on the left
+        else theta = 90.0;
     } else {
     //not aligned directly...
     //top quadrants
         if (asteroid.first < station.first) {
-            if (asteroid.second < station.second) {
-                //top left
-                theta += 270.0;
-            } else {
-                theta = 90.0 - theta;
-            }
+            if (asteroid.second < station.second) theta += 270.0; //top left
+            else theta = 90.0 - theta;
         } else {
-            if (asteroid.second < station.second) {
-                theta = 270.0 - theta;
-            } else {
-                theta += 90.0;
-            }
+            if (asteroid.second < station.second) theta = 270.0 - theta;
+            else theta += 90.0;
         }
     }
-    //cout << theta << endl;
     return theta;
 }
 
+//This is kinda bruteforce but whatever. It puts the rise/run into lowest terms so we can compare slopes
 pair<int, int> lowest_terms (int n1, int n2) {
-    int a = n1; 
-    int b = n2;
-    int i = 2;
-    int bound = abs(a) < abs(b) ? abs(b) : abs(a);
+    int a = n1, b = n2, i = 2, bound = abs(a) < abs(b) ? abs(b) : abs(a);
     while ( i <= bound ) {
         if (a % i == 0 && b % i == 0) {
-            a /= i;
-            b /= i;
-            i = 2;
+            a /= i; b /= i; i = 2;
             continue;
-        } else {
-            i++;
-        }
+        } else i++;
     }
     return make_pair(a, b);
 }
@@ -99,7 +74,7 @@ int main() {
 
 
     int best = 0;
-    pair <int, int> lazer;
+    pair <int, int> lazer; //this is going to be where the station is built
     
     //let's get slopes
     for (int i = 0; i < h; i++) {
@@ -133,28 +108,27 @@ int main() {
     //but we also need to make sure that we're able to hit that asteroid
     //i think??
 
-    std::cout << best << " at (" << lazer.second << ", " << lazer.first << ")\n";
-
     /* Calculate angles */
     for (pair<pair<int, int>, double> &p : locations) {
         if (lazer.first == p.first.first && lazer.second == p.first.second) continue;
         p.second = theta(lazer, p.first);
     }
 
-    //sort by theta
+    //sort by theta, very important -> closest targets first
     sort(locations.begin( ), locations.end( ), [ ]( const pair<pair<int, int>, double> & lhs, const pair<pair<int, int>, double>& rhs ) {
         return lhs.second < rhs.second;
     });
 
     int kills = 0;
     string previous_slope = "";
-    bool visited[locations.size()];
+    bool visited[locations.size()]; //because who wants to use vector::erase();????
 
-    for (int i = 0; i < locations.size(); i++)
-        visited[i] = false;
+    //make sure we don't have random memory chilling in our visited array
+    fill(visited, visited + locations.size(), false);
 
-    while (true) {
+    while (kills < locations.size()) {
         for (int i = 0; i < locations.size(); i++) {
+            //If we destroyed it already, or are attempting to destroy our station -> don't allow it!
             if (visited[i] || (locations[i].first.first == lazer.first && locations[i].first.second == lazer.second)) 
                 continue;
             
@@ -164,22 +138,25 @@ int main() {
             if (sl.first == 0) sl.second = (sl.second < 0 ? -1 : 1);
             if (sl.second == 0) sl.first = (sl.first < 0 ? - 1 : 1);
             
+            //slope to asteroid in lowest terms
             string slope = to_string(sl.first) + "/" + to_string(sl.second);
             
+            //if the previous target has the same slope, we can't hit it this round
             if (!slope.compare(previous_slope)) continue;
 
-            kills++;
+            kills++; //boom
             
+            //end-game, no avengers
             if (kills == 200) {
                 cout << "Result: " << locations[i].first.second * 100 + locations[i].first.first << endl;
                 return 0;
             }
 
+            //mark asteroid as destroyed, record its' slope
             visited[i] = true;
             previous_slope = slope;
         }
-        previous_slope = "";
+        previous_slope = ""; //reset slope as we're doing a new rotation
     }
-
     return 0;
 }
