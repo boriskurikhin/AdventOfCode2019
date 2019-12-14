@@ -14,7 +14,7 @@ Link | Part 1 | Part 2 | Tactic (w/ link to my solution)
 [Day 6](https://adventofcode.com/2019/day/6) | :heavy_check_mark: |  :heavy_check_mark: | [Recursion](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day6.java)
 [Day 7](https://adventofcode.com/2019/day/7) | :heavy_check_mark: |  :heavy_check_mark: [(with help)](https://github.com/akaritakai/AdventOfCode2019/blob/master/src/main/java/net/akaritakai/aoc2019/Puzzle07.java) | [Multithreading?](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day7.java)
 [Day 8](https://adventofcode.com/2019/day/8) | :heavy_check_mark: |  :heavy_check_mark: | [Image Processing-ish](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day8.java)
-[Day 9](https://adventofcode.com/2019/day/9) | :heavy_check_mark: |  :heavy_check_mark: | Cont. of Day 7
+[Day 9](https://adventofcode.com/2019/day/9) | :heavy_check_mark: |  :heavy_check_mark: | [Ad Hoc](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day9.java)
 [Day 10](https://adventofcode.com/2019/day/10) | :heavy_check_mark: |  :heavy_check_mark: | [Math - Trigonometry](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day10.cpp)
 
 ## Extras
