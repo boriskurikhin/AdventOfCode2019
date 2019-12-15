@@ -3,14 +3,18 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Day12 {
-	
+public class Day7 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader r = new BufferedReader(new FileReader("src/input.txt"));
 		int [][] moon_pos = new int[4][3];
 		int [][] moon_vel = new int[4][3];
 		int [][] grav = new int[4][3];
-		Map<String, Long> state = new HashMap<String, Long>();
+		
+		Map<String, Long> state_x = new HashMap<String, Long>();
+		Map<String, Long> state_y = new HashMap<String, Long>();
+		Map<String, Long> state_z = new HashMap<String, Long>();
+		long[] intervals = new long[3]; int intervalsFound = 0;
+		intervals[0] = intervals[1] = intervals[2] = -1L;
 		
 		for (int i = 0; i < 4; i++) {
 			String[] in = r.readLine().split(",");
@@ -25,8 +29,10 @@ public class Day12 {
 		
 		r.close();
 		
-		long steps = 0;	
-		while (steps < 1000) {
+		long steps = 0;
+				
+		//for part one make this steps < 1000
+		while (intervalsFound < 3) {
 			for (int m2 = 0; m2 < 4; m2++) 
 				for (int g = 0; g < 3; g++) 
 					grav[m2][g] = 0;
@@ -69,40 +75,65 @@ public class Day12 {
 				}
 			}
 			
-			String key = generateKey(moon_pos, moon_vel);
+			String xkey = generateKey(moon_pos, moon_vel, 0);
+			String ykey = generateKey(moon_pos, moon_vel, 1);
+			String zkey = generateKey(moon_pos, moon_vel, 2);
 			
-			if (state.containsKey(key)) {
-				System.out.println(steps - state.get(key));
-				return;
+			if (state_x.containsKey(xkey) && intervals[0] == -1) {
+				intervalsFound++;
+				intervals[0] = steps - state_x.get(xkey);
 			}
 			
-			state.put(key, steps);
+			if (state_y.containsKey(ykey) && intervals[1] == -1) {
+				intervalsFound++;
+				intervals[1] = steps - state_y.get(ykey);
+			}
+			
+			if (state_z.containsKey(zkey) && intervals[2] == -1) {
+				intervalsFound++;
+				intervals[2] = steps - state_z.get(zkey);
+			}
+			
+			
+			state_x.put(xkey, steps);
+			state_y.put(ykey, steps);
+			state_z.put(zkey, steps);
+			
 			steps++;
 		}
 		
-		System.out.println(state);
+//		int result = 0;
+//		
+//		for (int i = 0; i < 4; i++) {
+//			int a = 0, b = 0;
+//			for (int j = 0; j < 3; j++) {
+//				a += Math.abs(moon_pos[i][j]);
+//				b += Math.abs(moon_vel[i][j]);
+//			}
+//			result += (a*b);
+//		}
+//		
+//		System.out.println("Part 1: " + result);
 		
-		int result = 0;
-		
-		for (int i = 0; i < 4; i++) {
-			int a = 0, b = 0;
-			for (int j = 0; j < 3; j++) {
-				a += Math.abs(moon_pos[i][j]);
-				b += Math.abs(moon_vel[i][j]);
-			}
-			result += (a*b);
-		}
-		
-		System.out.println(result);
-		
+		System.out.println(LCM(LCM(intervals[0], intervals[1]), intervals[2]));	
 	}
 	
-	public static String generateKey(int[][] pos, int[][] vel) {
+	public static long LCM(long a, long b) {
+	    return (a * b) / GCF(a, b);
+	}
+
+	public static long GCF(long a, long b) {
+	    if (b == 0) {
+	        return a;
+	    } else {
+	        return (GCF(b, a % b));
+	    }
+	} 
+	
+	public static String generateKey(int[][] pos, int[][] vel, int state) {
 		String key = "";
-		for (int i = 0; i < 4; i++) {
-			for (int j = 0; j < 3; j++) 
-				key += pos[i][j] + ",";
-		}
+		for (int i = 0; i < 4; i++)
+			key += pos[i][state] + "_" + vel[i][state];
 		return key;
 	}
 	
