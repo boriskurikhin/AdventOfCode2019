@@ -3,7 +3,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Day7 {
+public class Day12 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader r = new BufferedReader(new FileReader("src/input.txt"));
 		int [][] moon_pos = new int[4][3];
