@@ -16,6 +16,8 @@ Link | Part 1 | Part 2 | Tactic (w/ link to my solution) | Notes
 [Day 8](https://adventofcode.com/2019/day/8) | :heavy_check_mark: |  :heavy_check_mark: | [Image Processing-ish](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day8.java) |
 [Day 9](https://adventofcode.com/2019/day/9) | :heavy_check_mark: |  :heavy_check_mark: | [Ad Hoc](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day9.java) | Uses 95% of my code from Part 7
 [Day 10](https://adventofcode.com/2019/day/10) | :heavy_check_mark: |  :heavy_check_mark: | [Math - Trigonometry](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day10.cpp) |
+[Day 11](https://adventofcode.com/2019/day/11) |  |  |  | Haven't looked at it yet
+[Day 12](https://adventofcode.com/2019/day/11) | :heavy_check_mark: | Working on it... | [Brute Force](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day12.java) | 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | 
 
 I solve the puzzles whenever I have free time or feel like bending my brain. **I am not competing!**
