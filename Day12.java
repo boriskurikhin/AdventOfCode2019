@@ -25,9 +25,8 @@ public class Day12 {
 		
 		r.close();
 		
-		long steps = 0;
-		
-		while (steps < 100) {
+		long steps = 0;	
+		while (steps < 1000) {
 			for (int m2 = 0; m2 < 4; m2++) 
 				for (int g = 0; g < 3; g++) 
 					grav[m2][g] = 0;
