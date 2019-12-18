@@ -18,6 +18,8 @@ Link | Part 1 | Part 2 | Tactic (w/ link to my solution) | Notes
 [Day 10](https://adventofcode.com/2019/day/10) | :heavy_check_mark: |  :heavy_check_mark: | [Math - Trigonometry](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day10.cpp) | Did this one in C++
 [Day 11](https://adventofcode.com/2019/day/11) |  |  |  | Haven't looked at it yet
 [Day 12](https://adventofcode.com/2019/day/12) | :heavy_check_mark: | :heavy_check_mark: | [Math](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/Day12.java) | For part 2, I tracked how long it takes for each axis to repeat states, and then performed an LCM on the 3 derived values
+[Day 13](https://adventofcode.com/2019/day/13) |  |  |  | Haven't looked at it yet
+[Day 11](https://adventofcode.com/2019/day/14) | :heavy_check_mark:  |  | [Brute Force?](https://github.com/boriskurikhin/AdventOfCode2019/blob/master/day14.py) | Did this one in Python3..might start doing stuff in Python
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | | 
 
 I solve the puzzles whenever I have free time or feel like bending my brain. **I am not competing!**
