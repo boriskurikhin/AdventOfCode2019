@@ -2,7 +2,7 @@
 
 > Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as a speed contest, interview prep, company training, university coursework, practice problems, or to challenge each other.
 
-My solutions to the [2019 Advent of Code](https://adventofcode.com/2019). All solutions are original, and are written in the Java programming language.
+My solutions to the [2019 Advent of Code](https://adventofcode.com/2019). All solutions are original. Solutions were written in Java, C++, and Python programming languages.
   
 Link | Part 1 | Part 2 | Tactic (w/ link to my solution) | Notes
 :------------ | :-------------| :-------------| :-------------|:-------------|
